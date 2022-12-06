@@ -24,7 +24,7 @@ spec:
    stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-bug-project -Dsonar.verbose=true"
+      sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-bug-project -Dsonar.verbose=true -Dsonar.java.binaries=target/classes"
     }
   }
   stage("Quality Gate"){
