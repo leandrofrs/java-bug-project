@@ -53,7 +53,8 @@
     <scm-publish-plugin-version>1.1</scm-publish-plugin-version>
     <site-plugin-version>3.6</site-plugin-version>
 
-    <!-- Reporting Plugins -->
+    <!-- Reporting Plugi
+ns -->
     <project-info-reports-plugin-version>2.9</project-info-reports-plugin-version>
   </properties>
 
@@ -76,6 +77,11 @@
 
   <build>
     <plugins>
+    <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.9.1.2184</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
