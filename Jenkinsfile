@@ -17,6 +17,10 @@ spec:
   stage('SCM') {
     checkout scm
   }
+  stage('build') {
+    def mvn = tool 'maven-3.8.6';
+    sh "${mvn}/bin/mvn clean package"
+  }
    stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
